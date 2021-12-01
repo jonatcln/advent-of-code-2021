@@ -28,7 +28,7 @@ def main():
                         help="day to run (default: today's day)")
     parser.add_argument("-p", metavar="PART", type=int, choices=[1, 2], default=None,
                         help="part to run (default: last implemented)")
-    input_group = parser.add_mutually_exclusive_group(required=True)
+    input_group = parser.add_mutually_exclusive_group(required=False)
     input_group.add_argument("-i", metavar="INPUT_STRING", type=str, default=None,
                         help="input string")
     input_group.add_argument("-f", metavar="INPUT_FILE", type=argparse.FileType('r'), default=None,
