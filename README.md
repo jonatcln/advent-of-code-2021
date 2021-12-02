@@ -7,7 +7,7 @@ My solutions to [Advent of Code 2021](https://adventofcode.com/2021).
 | Day           | Status | [Python](python) | [Rust](rust) | [C++](cpp) |
 | ------------- |:------:|:----------------:|:------------:|:----------:|
 | [Day 01][d01] | 🌟 | [🌟](py01) | [🌟](rs01) |  |
-| [Day 02][d02] |  |  |  |  |
+| [Day 02][d02] | 🌟 | [🌟](py02) |  |  |
 | [Day 03][d03] |  |  |  |  |
 | [Day 04][d04] |  |  |  |  |
 | [Day 05][d05] |  |  |  |  |
@@ -71,5 +71,6 @@ Licensed under the [AGPL-3.0 License](LICENSE).
 [d25]: https://adventofcode.com/2021/day/25
 
 [py01]: python/aoc/day01
+[py02]: python/aoc/day02
 
 [rs01]: rust/src/day01
