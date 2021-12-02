@@ -2,12 +2,16 @@
 
 My solutions to [Advent of Code 2021](https://adventofcode.com/2021).
 
-## Solutions overview
+## Progress
+
+Key: `✱` = 1 star, `🌟` = 2 stars.
+
+(Each star links to the solution of that day in that language.)
 
 | Day           | Status | [Python](python) | [Rust](rust) | [C++](cpp) |
 | ------------- |:------:|:----------------:|:------------:|:----------:|
-| [Day 01][d01] | 🌟 | [🌟](py01) | [🌟](rs01) |  |
-| [Day 02][d02] | 🌟 | [🌟](py02) |  |  |
+| [Day 01][d01] | 🌟 | [🌟][py01] | [🌟][rs01] |  |
+| [Day 02][d02] | 🌟 | [🌟][py02] |  |  |
 | [Day 03][d03] |  |  |  |  |
 | [Day 04][d04] |  |  |  |  |
 | [Day 05][d05] |  |  |  |  |
@@ -31,8 +35,6 @@ My solutions to [Advent of Code 2021](https://adventofcode.com/2021).
 | [Day 23][d23] |  |  |  |  |
 | [Day 24][d24] |  |  |  |  |
 | [Day 25][d25] |  |  |  |  |
-
-(Key: `✱` = 1 star, `🌟` = 2 stars)
 
 ## Other years
 
