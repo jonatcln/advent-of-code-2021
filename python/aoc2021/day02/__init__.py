@@ -1,3 +1,7 @@
+from aoc2021 import aoc
+
+
+@aoc.solver(day=2, part=1)
 def part1(data: str):
     pos = depth = 0
     for line in data.splitlines():
@@ -11,6 +15,8 @@ def part1(data: str):
             pos += n
     print(pos*depth)
 
+
+@aoc.solver(day=2, part=2)
 def part2(data: str):
     pos = depth = aim = 0
     for line in data.splitlines():

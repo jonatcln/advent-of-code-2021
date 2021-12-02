@@ -1,3 +1,7 @@
+from aoc2021 import aoc
+
+
+@aoc.solver(day=1, part=1)
 def part1(data: str):
     nums = [int(x) for x in data.splitlines()]
     prev = nums[0]
@@ -9,6 +13,7 @@ def part1(data: str):
     print(increased)
 
 
+@aoc.solver(day=1, part=2)
 def part2(data: str):
     nums = [int(x) for x in data.splitlines()]
     prev = sum(nums[:3])

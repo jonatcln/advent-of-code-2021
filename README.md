@@ -72,7 +72,7 @@ Licensed under the [AGPL-3.0 License](LICENSE).
 [d24]: https://adventofcode.com/2021/day/24
 [d25]: https://adventofcode.com/2021/day/25
 
-[py01]: python/aoc/day01
-[py02]: python/aoc/day02
+[py01]: python/aoc2021/day01
+[py02]: python/aoc2021/day02
 
 [rs01]: rust/src/day01

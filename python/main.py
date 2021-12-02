@@ -3,7 +3,7 @@
 import argparse
 from datetime import date
 
-from aoc import YEAR, AOC
+from aoc2021 import aoc
 
 
 def default_input_file(day):
@@ -11,14 +11,14 @@ def default_input_file(day):
 
 
 def main():
-    advent_start = date(YEAR, 12, 1)
+    advent_start = date(aoc.year, 12, 1)
     delta_days = (date.today() - advent_start).days + 1
 
     if delta_days < 1:
-        err_no_day_msg = f"Advent of Code {YEAR} starts within {-delta_days} days."
+        err_no_day_msg = f"Advent of Code {aoc.year} starts within {-delta_days} days."
         today = None
     elif delta_days > 25:
-        err_no_day_msg = f"Advent of Code {YEAR} ended {delta_days - 25} days ago."
+        err_no_day_msg = f"Advent of Code {aoc.year} ended {delta_days - 25} days ago."
         today = None
     else:
         today = delta_days
@@ -41,12 +41,12 @@ def main():
     if day is None:
         parser.error(err_no_day_msg)
 
-    if day not in AOC.keys():
+    if day not in aoc.days():
         parser.error(f"day {day} hasn't been implemented yet")
 
-    part = args.p or len(AOC[day].keys())
+    part = args.p or len(aoc.parts(day))
 
-    if part not in AOC[day].keys():
+    if part not in aoc.parts(day):
         parser.error(f"day {day} part {part} hasn't been implemented yet")
 
     if args.i:
@@ -59,7 +59,7 @@ def main():
         data = file.read()
         file.close()
 
-    AOC[day][part](data)
+    aoc.solve(day, part, data)
 
 
 if __name__ == '__main__':
