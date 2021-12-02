@@ -1,4 +1,4 @@
 from aoc import utils
 
-def part1(data: str):
+def part2(data: str):
     print(data)
