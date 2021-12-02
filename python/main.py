@@ -6,10 +6,6 @@ from datetime import date
 from aoc2021 import aoc
 
 
-def default_input_file(day):
-    return f"input/day{day:02d}.txt"
-
-
 def main():
     advent_start = date(aoc.year, 12, 1)
     delta_days = (date.today() - advent_start).days + 1
@@ -32,7 +28,7 @@ def main():
     input_group.add_argument("-i", metavar="INPUT_STRING", type=str, default=None,
                         help="input string")
     input_group.add_argument("-f", metavar="INPUT_FILE", type=argparse.FileType('r'), default=None,
-                        help="input filename")
+                        help="input filename (default: `input/dayXX.txt`)")
 
     args = parser.parse_args()
 
@@ -55,7 +51,7 @@ def main():
         data = args.f.read()
         args.f.close()
     else:
-        file = open(default_input_file(day), 'r')
+        file = open(f"input/day{day:02d}.txt", 'r')
         data = file.read()
         file.close()
 
