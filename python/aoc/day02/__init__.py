@@ -1,9 +1,26 @@
-from aoc import utils
-from .part1 import part1 as run_part1
-from .part2 import part2 as run_part2
-
 def part1(data: str):
-    return run_part1(data)
+    pos = depth = 0
+    for line in data.splitlines():
+        command, ns = line.split()
+        n = int(ns)
+        if command == "down":
+            depth += n
+        elif command == "up":
+            depth -= n
+        elif command == "forward":
+            pos += n
+    print(pos*depth)
 
 def part2(data: str):
-    return run_part2(data)
+    pos = depth = aim = 0
+    for line in data.splitlines():
+        command, ns = line.split()
+        n = int(ns)
+        if command == "down":
+            aim += n
+        elif command == "up":
+            aim -= n
+        elif command == "forward":
+            pos += n
+            depth += aim*n
+    print(pos*depth)
