@@ -2,4 +2,4 @@ from .aoc_manager import AocManager
 
 aoc = AocManager(2021)
 
-from . import day01, day02, day03, day04
+from . import day01, day02, day03, day06
