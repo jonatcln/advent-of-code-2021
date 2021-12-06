@@ -40,7 +40,7 @@ def main():
     if day not in aoc.days():
         parser.error(f"day {day} hasn't been implemented yet")
 
-    part = args.p or len(aoc.parts(day))
+    part = args.p or max(aoc.parts(day))
 
     if part not in aoc.parts(day):
         parser.error(f"day {day} part {part} hasn't been implemented yet")
