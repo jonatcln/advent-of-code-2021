@@ -17,7 +17,7 @@ Key: `✱` = 1 star, `🌟` = 2 stars.
 | [Day 05][d05] | 🌟 | [🌟][py05] |  |  |  |
 | [Day 06][d06] | 🌟 | [🌟][py06] | [🌟][rs06] |  |  |
 | [Day 07][d07] | 🌟 | [🌟][py07] |  |  |  |
-| [Day 08][d08] |  |  |  |  |  |
+| [Day 08][d08] | 🌟 | [🌟][py08] |  |  |  |
 | [Day 09][d09] |  |  |  |  |  |
 | [Day 10][d10] |  |  |  |  |  |
 | [Day 11][d11] |  |  |  |  |  |
@@ -79,6 +79,7 @@ Licensed under the [AGPL-3.0 License](LICENSE).
 [py05]: python/aoc2021/day05
 [py06]: python/aoc2021/day06
 [py07]: python/aoc2021/day07
+[py08]: python/aoc2021/day08
 
 [rs01]: rust/src/day01
 [rs06]: rust/src/day06
