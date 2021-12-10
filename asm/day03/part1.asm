@@ -151,11 +151,11 @@ next_bit:
 
 	# restore original registers
 	lw	$s5, -0x18($fp)
-	lw	$s0, -0x14($fp)
-	lw	$s1, -0x10($fp)
+	lw	$s4, -0x14($fp)
+	lw	$s3, -0x10($fp)
 	lw	$s2, -0x0c($fp)
-	lw	$s3, -0x08($fp)
-	lw	$s4, -0x04($fp)
+	lw	$s1, -0x08($fp)
+	lw	$s0, -0x04($fp)
 
 	# return to old frame
 	move	$sp, $fp		# reset stack pointer to current frame pointer
