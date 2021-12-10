@@ -14,12 +14,16 @@ class AocManager:
         """Return a set of all part numbers of the given `day` for which a solver is registered."""
         return set(self._solvers[day].keys())
 
-    def solver(self, day: int, part: int) -> Callable[[Callable[[str], Any]], Callable[[str], None]]:
+    def solver(self, day: int, part: int = 3) -> Callable[[Callable[[str], Any]], Callable[[str], None]]:
         def decorate_solver(solve: Callable[[str], Any]) -> Callable[[str], None]:
             """Add the `solve` function as a solver for the given `day` and `part`."""
             def decorated_solve(data: str):
                 result = solve(data)
-                if result is not None:
+                if part == 3:
+                    for r in result:
+                        if r is not None:
+                            print(r)
+                elif result is not None:
                     print(result)
 
             if day in self._solvers:
@@ -35,7 +39,9 @@ class AocManager:
    
     def solve(self, day: int, part: int, data: str) -> bool:
         """Solve the given `day` and `part` using `data` as input.
-        Return whether that combination was implemented."""
+        Return whether that combination was implemented.
+        part = 3 means both parts (but this only works if there's a solver that
+        can solve both parts at once for the given day)."""
         if day not in self.days() or part not in self.parts(day):
             return False
         self._solvers[day][part](data)

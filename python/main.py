@@ -22,8 +22,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", metavar="DAY", type=int, choices=range(1, 26), default=today,
                         help="day to run (default: today's day)")
-    parser.add_argument("-p", metavar="PART", type=int, choices=[1, 2], default=None,
-                        help="part to run (default: last implemented)")
+    parser.add_argument("-p", metavar="PART", type=int, choices=[1, 2, 3], default=None,
+                        help="part to run (3: both if implemented, default: last implemented)")
     input_group = parser.add_mutually_exclusive_group(required=False)
     input_group.add_argument("-i", metavar="INPUT_STRING", type=str, default=None,
                         help="input string")
@@ -43,7 +43,7 @@ def main():
     part = args.p or max(aoc.parts(day))
 
     if part not in aoc.parts(day):
-        parser.error(f"day {day} part {part} hasn't been implemented yet")
+        parser.error(f"day {day} part {part} hasn't been implemented (yet)")
 
     if args.i:
         data = args.i
