@@ -7,16 +7,16 @@ from collections import defaultdict
 def run(data: str):
     graph = defaultdict(set)
     for line in data.splitlines():
-        p = line.split("-")
-        graph[p[0]].add(p[1])
-        graph[p[1]].add(p[0])
+        n1, n2 = line.split("-")
+        graph[n1].add(n2)
+        graph[n2].add(n1)
     return (
-        find_paths1(graph, set(), "start"),
-        find_paths2(graph, set(), "start"),
+        find_paths1(graph, "start", set()),
+        find_paths2(graph, "start", set()),
     )
 
 
-def find_paths1(edges, lowers, node):
+def find_paths1(edges, node, lowers):
     count = 0
     for n in edges[node]:
         if n == "start":
@@ -24,13 +24,13 @@ def find_paths1(edges, lowers, node):
         elif n == "end":
             count += 1
         elif n.isupper():
-            count += find_paths1(edges, lowers, n)
+            count += find_paths1(edges, n, lowers)
         elif n not in lowers:
-            count += find_paths1(edges, lowers | {n}, n)
+            count += find_paths1(edges, n, lowers | {n})
     return count
 
 
-def find_paths2(edges, lowers, node, twice=False):
+def find_paths2(edges, node, lowers, twice=False):
     count = 0
     for n in edges[node]:
         if n == "start":
@@ -38,9 +38,9 @@ def find_paths2(edges, lowers, node, twice=False):
         elif n == "end":
             count += 1
         elif n.isupper():
-            count += find_paths2(edges, lowers, n, twice)
+            count += find_paths2(edges, n, lowers, twice)
         elif not twice:
-            count += find_paths2(edges, lowers | {n}, n, n in lowers)
+            count += find_paths2(edges, n, lowers | {n}, n in lowers)
         elif n not in lowers:
-            count += find_paths2(edges, lowers | {n}, n, twice)
+            count += find_paths2(edges, n, lowers | {n}, twice)
     return count
